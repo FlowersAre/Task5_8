@@ -8,18 +8,19 @@ $(`#t2`).click(() => {
     $(`#t1`).text(`Changed`);
 });
 
+let count=0;
 
-var poc=0;
-
-$(`#t3`).click(() => {
-    poc= poc + 1;
-})
-
-console.log(poc);
-
-if ( poc === 1) {
-    $(`#t3`).click(() => {
+$(`#t3`).click(()=>{
+    count++;
+    console.log(count);
+    if(count === 1) {
         let barva = $(`#v1`).val();
-        $(`#t1, #t2, #t3`).css(`background-color`, barva);
-    });
-}
+        console.log(barva);
+        $(`#t1, #t2, #t3`).css({
+            backgroundColor: barva,  
+        });
+    };
+});
+
+
+
